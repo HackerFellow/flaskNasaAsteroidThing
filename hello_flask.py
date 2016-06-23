@@ -33,7 +33,11 @@ def search(start,end):
     startDate = datetime.datetime.strptime(start, "%Y-%m-%d").date();
     endDate = datetime.datetime.strptime(end, "%Y-%m-%d").date();
     asteroids = asteriods(start,end);
-    return flask.render_template('search.html', asteroids=asteroids, jsonDump=json.dumps(asteroids,sort_keys=True, indent=4))
+    return flask.render_template('search.html',
+            asteroids=asteroids,
+            jsonDump=json.dumps(asteroids,sort_keys=True, indent=4),
+            startDate=startDate,
+            endDate=endDate);
 
 @APP.route('/')
 def index():

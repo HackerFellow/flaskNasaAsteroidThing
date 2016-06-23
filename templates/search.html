@@ -2,10 +2,14 @@
 <html lang='en'>
 	<head>
 		<meta charset="utf-8" />
-		<title>Hello world!</title>
+		<title>Asteroids</title>
 		<link type="text/css" rel="stylesheet"
-			href="{{ url_for('static',filename='style.css')}}" />
+			href="{{ url_for('static',filename='style.css')}}">
 	</head>
+		<nav>
+			<a href="/{{startDate - (endDate - startDate)}}/{{endDate - (endDate - startDate)}}">Prev</a>
+			<a href="/{{startDate + (endDate - startDate)}}/{{endDate + (endDate - startDate)}}">Next</a>
+		</nav>
 		<table class="sortable">
 			<tr>
 				<th>Name</th>
